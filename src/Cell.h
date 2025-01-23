@@ -1,11 +1,16 @@
-#indef Cell_H
+#ifndef Cell_H
 #define Cell_H
+
+#include <stdlib.h>
+#include <SFML/Graphics.hpp>
 
 class Cell{
     public:
+        Cell();
+        Cell(int con);
         int get_content();
         bool get_revealed();
-        void set_content(int i);
+        void inc_content();
         void reveal();
     private:
 
