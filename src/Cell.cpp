@@ -33,3 +33,8 @@ void Cell::set_bomb(){
 void Cell::reveal(){
     revealed = true;
 }
+
+void Cell::reset(){
+    content = 0;
+    revealed = false;
+}

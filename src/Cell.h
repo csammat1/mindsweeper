@@ -13,6 +13,7 @@ class Cell{
         void inc_content();
         void set_bomb();
         void reveal();
+        void reset();
     private:
 
     int content;

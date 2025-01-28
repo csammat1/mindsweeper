@@ -10,7 +10,27 @@
 #include "Cell.h"
 using namespace std;
 
+void reset_board(int rows, int cols, vector<vector<Cell>>& board){
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+            board[i][j].reset();
+        }
+    }
+}
+
+void resize_board(int rows, int cols, vector<vector<Cell>>& board){
+    // Resize the outer vector to the new number of rows
+    board.resize(rows);
+
+    // Resize each inner vector to the new number of columns
+    for (int i = 0; i < rows; ++i) {
+        board[i].resize(cols);
+    }
+    reset_board(rows, cols, board);
+}
+
 void randomize_board(int rows, int cols, float bomb_ratio, vector<vector<Cell>>& board){
+    reset_board(rows, cols, board);
     int bombs_to_make = rows * cols * bomb_ratio;
     vector<pair<int, int>> pairs;
     for (int i = 0; i < rows; ++i) {
@@ -59,7 +79,6 @@ int main(){
     vector<vector<Cell>> board(rows, vector<Cell>(cols, 0));
 
     randomize_board(rows, cols, bomb_ratio, board);
-
     print_board(rows, cols, board);
 
     //set up game board for default settings
