@@ -21,7 +21,13 @@ bool Cell::get_revealed(){
 }
 
 void Cell::inc_content(){
-    content++;
+    if(content < 8){
+        content++;
+    }
+}
+
+void Cell::set_bomb(){
+    content = 9;
 }
 
 void Cell::reveal(){

@@ -1,7 +1,7 @@
 all: minesweeper
 
 minesweeper: minesweeper.o Cell.o
-	g++  minesweeper.o Cell.o
+	g++ minesweeper.o Cell.o -o minesweeper
 
 minesweeper.o: minesweeper.cpp Cell.h
 	g++ -c minesweeper.cpp

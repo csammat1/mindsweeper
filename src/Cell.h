@@ -11,6 +11,7 @@ class Cell{
         int get_content();
         bool get_revealed();
         void inc_content();
+        void set_bomb();
         void reveal();
     private:
 
